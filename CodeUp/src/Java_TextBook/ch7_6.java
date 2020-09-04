@@ -48,7 +48,7 @@ public class ch7_6 {
 				break;
 			}
 		
-				System.out.println(stu.get(name).getName()+" "+stu.get(name).getMajor()+" "+stu.get(name).getNum()+" "+stu.get(name).getAvg());
+				System.out.println(name+" "+stu.get(name).getMajor()+" "+stu.get(name).getNum()+" "+stu.get(name).getAvg());
 			
 		
 		}
