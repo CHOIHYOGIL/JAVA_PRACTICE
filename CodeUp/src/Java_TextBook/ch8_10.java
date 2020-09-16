@@ -11,7 +11,7 @@ public class ch8_10 {
 		String path="C:\\Users\\user\\Desktop\\";
 		File file=new File(path+"phone.txt");
 		Scanner scanner;
-		Phone phone1[]= new Phone[30];
+		Phone1 phone1[]= new Phone1[30];
 		int count=0;
 		int i=0;
 		try {
@@ -20,7 +20,7 @@ public class ch8_10 {
 				String name=scanner.next();
 				String phone=scanner.next();
 			
-				 phone1[i++]=new Phone(name,phone);
+				 phone1[i++]=new Phone1(name,phone);
 				count++;
 			}
 		} catch (FileNotFoundException e) {

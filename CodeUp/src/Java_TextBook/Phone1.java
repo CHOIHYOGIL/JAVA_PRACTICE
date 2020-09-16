@@ -1,9 +1,9 @@
 package Java_TextBook;
 
 
-class Phone{
+class Phone1{
 	
-	public Phone(String name, String phone) {
+	public Phone1(String name, String phone) {
 		super();
 		this.phone = phone;
 		this.name = name;
