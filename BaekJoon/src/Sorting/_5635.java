@@ -1,43 +1,72 @@
 package Sorting;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class _5635 {
 
-	public static void main(String[] args) {
-		Scanner scanner=new Scanner(System.in);
+	public static void main(String[] args) throws IOException {
+	
 		
-		int n=scanner.nextInt();
-		int max=0;
-		int min=1999*1000;
-		String name="";
-		int day=0;
-		int month=0;
-		int year=0;
-		for(int i=0; i<n; i++) {
-			
-			name=scanner.next();
-			day=scanner.nextInt();
-			month=scanner.nextInt();
-			year=scanner.nextInt();
-			
-			
-			String Youngest="";
-					String Oldest="";
+	BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+    BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	int n=Integer.parseInt(br.readLine());
+	
+	people []peoples=new people[n];
+	
+	for(int i=0; i<n; i++) {
+		StringTokenizer st=new StringTokenizer(br.readLine());
+		String name=st.nextToken();
+		String a= st.nextToken();
+		String b=st.nextToken();
+		String c=st.nextToken();
+		
+		if(a.length()==1) a="0"+a;
+		if(b.length()==1) b="0"+b;
+		
+		peoples[i]=new people(name, Integer.parseInt(c+b+a));
+		
+	}
+	
+	Arrays.sort(peoples, (p,q) -> p.birthday-q.birthday);
 
-					int sum=year*1000+month*100+day*10;
-					if(sum>max) {
-						max=sum;
-						Youngest=name;
-					}
-					
-					if(min>sum) {
-						min=sum;
-						Oldest=name;
-					}
-			
-			
-		}
+    bw.write(peoples[0].name + "\n");
+    bw.write(peoples[n - 1].name + "\n");
+    bw.flush();
+    br.close();
+    bw.close();
 	}
 
+}
+
+class people{
+	String name;
+	int birthday;
+
+	public people(String name, int birthday) {
+		super();
+		this.name = name;
+		this.birthday = birthday;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getBirthday() {
+		return birthday;
+	}
+	public void setBirthday(int birthday) {
+		this.birthday = birthday;
+	}
+
+	
 }
