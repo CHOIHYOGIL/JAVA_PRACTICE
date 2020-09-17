@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.StringTokenizer;
 
 public class _5635 {
@@ -33,7 +34,12 @@ public class _5635 {
 		
 	}
 	
-	Arrays.sort(peoples, (p,q) -> p.birthday-q.birthday);
+	Arrays.sort(peoples, new Comparator<people>() {
+		
+		public int compare(people o1, people o2) {
+			return o2.getBirthday()-o1.getBirthday();
+		}
+	});
 
     bw.write(peoples[0].name + "\n");
     bw.write(peoples[n - 1].name + "\n");

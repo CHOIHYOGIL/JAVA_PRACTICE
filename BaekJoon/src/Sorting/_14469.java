@@ -68,6 +68,7 @@ class Cow implements Comparable<Cow> {
 	}
 	@Override
 	public int compareTo(Cow cow) {
+		//return cow.arriveTime-this.arriveTime;  이것은 내림차순
 		return this.arriveTime-cow.arriveTime;
 	}
 
