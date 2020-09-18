@@ -5,47 +5,33 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class _4948 {
+public class _5565 {
 
 	public static void main(String[] args) throws IOException {
 		
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(System.out));
-		Scanner scanner=new Scanner(System.in);
+		
 		StringTokenizer st;
 		
-		int index=0;
-		int arr[]=new int[100];
-		boolean bool=true;
-		while(bool) {
+		int total=0;
+		st=new StringTokenizer(br.readLine());
+		total=Integer.parseInt(st.nextToken());
+		int arr[]=new int[9];
+		for(int i=0; i<9; i++) {
 			st=new StringTokenizer(br.readLine());
-			int n=scanner.nextInt();
-			if(n==0) {
-				bool=false;
-				break;
-			}
-		
-			
-			for(int i=n; i<=2*n; i++) {
-				int count=0;
-				for(int j=2; j<=2*n-1; j++) {
-					if(i%j==0) {
-						continue;
-					}
-					
-				}
-				arr[index]=count;
-				index=index+1;
-			}
+			arr[i]=Integer.parseInt(st.nextToken());
 			
 		}
-		
-		for(int i=0; i<arr.length; i++) {
-			System.out.println(arr[i]);
+		int sum=0;
+		for(int i=0; i<9; i++) {
+			sum+=arr[i];
 		}
+		System.out.println(total-sum);
+	
+	
 	}
 
 }
