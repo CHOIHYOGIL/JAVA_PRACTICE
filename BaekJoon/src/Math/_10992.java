@@ -1,3 +1,4 @@
+package Math;
 import java.util.Scanner;
 
 public class _10992 {
